@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <Button
+        android:id="@+id/btn_goto_secondActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转到SecondActivity"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_send_register_success_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正常发送RegisterSuccessEvent"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btn_goto_secondActivity"/>
+
+    <Button
+        android:id="@+id/btn_send_register_success_sticky_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="粘性发送RegisterSuccessEvent"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btn_send_register_success_event"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MainActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
