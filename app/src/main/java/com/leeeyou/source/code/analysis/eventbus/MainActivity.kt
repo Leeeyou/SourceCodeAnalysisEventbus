@@ -2,10 +2,7 @@ package com.leeeyou.source.code.analysis.eventbus
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import com.leeeyou.source.code.analysis.eventbus.event.LoginSuccessEvent
@@ -22,10 +19,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         EventBus.getDefault().register(this)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
 
         findViewById<Button>(R.id.btn_goto_secondActivity).setOnClickListener {
             startActivity(Intent(this@MainActivity, SecondActivity::class.java))
@@ -42,18 +35,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
     public override fun onDestroy() {
         super.onDestroy()
         EventBus.getDefault().unregister(this)
@@ -65,7 +46,5 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, this@MainActivity.javaClass.simpleName + " 接收到 " + event.javaClass.simpleName, Toast.LENGTH_SHORT).show()
         }
     }
-
-
 
 }
